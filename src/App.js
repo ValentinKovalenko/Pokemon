@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from "./Pages/Main";
+import Pokemon from "./Pages/Pokemon";
+import * as action from "./action/actionPokemon";
+import React, {useState} from "react";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+       const findPokemon = (name) => {
+       action.find(name).then((res) => {
+           console.log(res)
+       })
+   }
+    return (
+        <div className='container'>
+            <div className='row justify-content-md-center bg-info'>
+                <div className='col-md-auto mt-4' >
+            <Main findPokemon = {findPokemon}/>
+            <Pokemon />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
