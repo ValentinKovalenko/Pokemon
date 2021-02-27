@@ -19,7 +19,7 @@ const Main = ({findPokemon}) => {
                handleSubmit,
 
            }) => (
-            <form className="row g-3">
+            <form className="row g-3 mb-3">
                 <div className="col-auto note">
                     <label htmlFor="" className="visually-hidden"></label>
                     <input
@@ -33,7 +33,7 @@ const Main = ({findPokemon}) => {
                 </div>
                 <div className="col-auto">
                     <button type="submit"
-                            className="btn btn-primary mb-3"
+                            className="btn btn-danger "
                             onClick={handleSubmit}
                     >Submit
                     </button>

@@ -11,9 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.note {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2px;
+.colorr {
+  background: gainsboro;
+}
+.strong1 {
+  text-transform: capitalize;
+  }
+.sup1 {
+  font-size: 16px;
+}
+.font1 {
+  margin-top: 90%;
 }
