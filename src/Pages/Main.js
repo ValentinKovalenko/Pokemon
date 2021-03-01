@@ -10,7 +10,6 @@ const Main = ({findPokemon}) => {
                 namePokemon: '',
             }}
             onSubmit={(values) => {
-                console.log(values)
                 findPokemon(values.namePokemon)
             }}
         >{({

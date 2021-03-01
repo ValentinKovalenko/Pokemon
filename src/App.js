@@ -11,7 +11,6 @@ function App() {
     const findPokemon = (name) => {
         action.find(name).then((res) => {
             setResult(res)
-            console.log(res)
             setError(false)
         }).catch((e) => {
             setResult(null)
@@ -24,7 +23,7 @@ function App() {
                 <div className='col-md-auto mt-4 '>
                     <Main findPokemon={findPokemon}/>
                     {result ? <Pokemon result={result}/> : null}
-                    {error ? <p className='text-center text-danger'><strong>Not Found</strong></p> : null}
+                    {error ? <p className='text-center text-danger'><h1>Not Found</h1></p> : null}
                 </div>
             </div>
         </div>
