@@ -1,8 +1,11 @@
 import React from 'react'
 import {Formik} from "formik";
+import * as yup from "yup";
 
 const Main = ({findPokemon}) => {
-
+    const validationsSchema = yup.object().shape({
+        namePokemon: yup.string().required('Please enter name pokemon')
+    })
 
     return (
         <Formik
@@ -12,7 +15,10 @@ const Main = ({findPokemon}) => {
             onSubmit={(values) => {
                 findPokemon(values.namePokemon)
             }}
+            validationSchema={validationsSchema}
         >{({
+               errors,
+               touched,
                values,
                handleChange,
                handleSubmit,
@@ -25,10 +31,11 @@ const Main = ({findPokemon}) => {
                         name="namePokemon"
                         type="text"
                         className="form-control"
-                        placeholder=""
+                        placeholder="Name pokemon"
                         onChange={handleChange}
                         value={values.namePokemon}
                     />
+                    {touched.namePokemon && <p className='text-danger p1' >{errors.namePokemon}</p>}
                 </div>
                 <div className="col-auto">
                     <button type="submit"
